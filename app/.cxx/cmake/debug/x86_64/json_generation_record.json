@@ -1,0 +1,122 @@
+[
+  {
+    "level": "INFO",
+    "message": "Start JSON generation. Platform version: 24 min SDK version: x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "rebuilding JSON /Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/x86_64/android_gradle_build.json due to:"
+  },
+  {
+    "level": "INFO",
+    "message": "- command changed from previous, will remove stale json folder"
+  },
+  {
+    "level": "INFO",
+    "message": "- a dependent build file changed"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/Android/Sdk/ndk/21.4.7075529/build/cmake/platforms.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/opencv-mobile-4.5.4-android/sdk/native/jni/abi-x86_64/OpenCVModules.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/opencv-mobile-4.5.4-android/sdk/native/jni/abi-x86_64/OpenCVModules-release.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/Android/Sdk/ndk/21.4.7075529/build/cmake/android.toolchain.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/opencv-mobile-4.5.4-android/sdk/native/jni/OpenCVConfig-version.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/ncnn-20210720-android-vulkan/x86_64/lib/cmake/SPIRVTargets-release.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/CMakeLists.txt"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/opencv-mobile-4.5.4-android/sdk/native/jni/OpenCVConfig.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/ncnn-20210720-android-vulkan/x86_64/lib/cmake/glslangTargets-release.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/ncnn-20210720-android-vulkan/x86_64/lib/cmake/ncnn/ncnn.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/ncnn-20210720-android-vulkan/x86_64/lib/cmake/OSDependentTargets-release.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/ncnn-20210720-android-vulkan/x86_64/lib/cmake/OGLCompilerTargets.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/ncnn-20210720-android-vulkan/x86_64/lib/cmake/glslangTargets.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/ncnn-20210720-android-vulkan/x86_64/lib/cmake/OSDependentTargets.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/ncnn-20210720-android-vulkan/x86_64/lib/cmake/OGLCompilerTargets-release.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/ncnn-20210720-android-vulkan/x86_64/lib/cmake/ncnn/ncnn-release.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/opencv-mobile-4.5.4-android/sdk/native/jni/abi-x86_64/OpenCVConfig.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/ncnn-20210720-android-vulkan/x86_64/lib/cmake/ncnn/ncnnConfig.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "  - /home/trandat/project/VIETTEC/Face_recognition/android_dev/ncnn_Android_blazeface/app/src/main/jni/ncnn-20210720-android-vulkan/x86_64/lib/cmake/SPIRVTargets.cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "removing stale contents from \u0027/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/x86_64\u0027"
+  },
+  {
+    "level": "INFO",
+    "message": "created folder \u0027/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/x86_64\u0027"
+  },
+  {
+    "level": "INFO",
+    "message": "executing cmake Executable : /Users/macbook/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake\narguments : \n-H/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/jni\n-B/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/x86_64\n-DANDROID_ABI\u003dx86_64\n-DANDROID_PLATFORM\u003dandroid-24\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/x86_64\n-DCMAKE_BUILD_TYPE\u003dDebug\n-DANDROID_NDK\u003d/Users/macbook/Library/Android/sdk/ndk/21.4.7075529\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_ANDROID_ARCH_ABI\u003dx86_64\n-DCMAKE_SYSTEM_VERSION\u003d24\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_ANDROID_NDK\u003d/Users/macbook/Library/Android/sdk/ndk/21.4.7075529\n-DCMAKE_TOOLCHAIN_FILE\u003d/Users/macbook/Library/Android/sdk/ndk/21.4.7075529/build/cmake/android.toolchain.cmake\n-G Ninja\n-DCMAKE_MAKE_PROGRAM\u003d/Users/macbook/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja\njvmArgs : \n\n"
+  },
+  {
+    "level": "INFO",
+    "message": "done executing cmake"
+  },
+  {
+    "level": "INFO",
+    "message": "write build output /Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/x86_64/build_output.txt"
+  },
+  {
+    "level": "INFO",
+    "message": "write command file /Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/x86_64/build_command.txt"
+  },
+  {
+    "level": "INFO",
+    "message": "JSON generation completed without problems"
+  }
+]

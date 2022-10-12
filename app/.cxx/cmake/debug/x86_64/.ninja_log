@@ -1,0 +1,6 @@
+# ninja log v5
+1	81	1665054081	CMakeFiles/blazefacencnn.dir/ObserverChain.cpp.o	f6b53f1619115eb
+1	861	1665054082	CMakeFiles/blazefacencnn.dir/ndkcamera.cpp.o	1e1572fbc5026ac5
+1	1016	1665054082	CMakeFiles/blazefacencnn.dir/blazeface.cpp.o	299fd4a7d6864b02
+0	1086	1665054082	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	c90e2f17b765f603
+1086	1795	1665054083	/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/x86_64/libblazefacencnn.so	46d0d963e7fb1ba2

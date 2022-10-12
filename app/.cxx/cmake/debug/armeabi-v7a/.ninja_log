@@ -1,0 +1,14 @@
+# ninja log v5
+1286	2108	1665387537	/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libblazefacencnn.so	b229a165a18e9a68
+1	1228	1665308247	CMakeFiles/blazefacencnn.dir/blazeface.cpp.o	5ea84596c6e3f903
+1	1286	1665387536	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	15c3e667cf5bd290
+1	960	1664183321	CMakeFiles/blazefacencnn.dir/ndkcamera.cpp.o	bffc5ea425beaf87
+3	91	1664963477	CMakeFiles/blazefacencnn.dir/ObserverChain.cpp.o	634fb8b3075eb80b
+1	1234	1665388062	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	15c3e667cf5bd290
+1234	2062	1665388062	/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libblazefacencnn.so	b229a165a18e9a68
+1	1176	1665388156	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	15c3e667cf5bd290
+1176	1891	1665388157	/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libblazefacencnn.so	b229a165a18e9a68
+1	1277	1665388414	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	15c3e667cf5bd290
+1278	2056	1665388415	/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libblazefacencnn.so	b229a165a18e9a68
+1	1636	1665388577	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	15c3e667cf5bd290
+1636	2461	1665388578	/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libblazefacencnn.so	b229a165a18e9a68

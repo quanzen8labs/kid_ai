@@ -1,0 +1,6 @@
+ninja: Entering directory `/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/x86_64'
+[1/5] Building CXX object CMakeFiles/blazefacencnn.dir/ObserverChain.cpp.o
+[2/5] Building CXX object CMakeFiles/blazefacencnn.dir/ndkcamera.cpp.o
+[3/5] Building CXX object CMakeFiles/blazefacencnn.dir/blazeface.cpp.o
+[4/5] Building CXX object CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o
+[5/5] Linking CXX shared library /Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/x86_64/libblazefacencnn.so

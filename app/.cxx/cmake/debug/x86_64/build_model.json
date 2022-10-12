@@ -1,0 +1,70 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "/Users/macbook/Documents/ncnn_Android_blazeface-main",
+      "sdkFolder": "/Users/macbook/Library/Android/sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates",
+      "gradleModulePathName": ":app",
+      "moduleRootFolder": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app",
+      "makeFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/jni/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "/Users/macbook/Documents/ncnn_Android_blazeface-main/.cxx",
+      "cxxFolder": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx",
+      "ndkFolder": "/Users/macbook/Library/Android/sdk/ndk/21.4.7075529",
+      "ndkVersion": "21.4.7075529",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [],
+    "cFlagList": [],
+    "cppFlagsList": [],
+    "variantName": "debug",
+    "soFolder": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/lib",
+    "objFolder": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj",
+    "jsonFolder": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug",
+    "gradleBuildOutputFolder": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cxx/debug",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "X86_64",
+  "abiPlatformVersion": 24,
+  "cxxBuildFolder": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/x86_64",
+  "jsonFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/x86_64/android_gradle_build.json",
+  "gradleBuildOutputFolder": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cxx/debug/x86_64",
+  "objFolder": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/x86_64",
+  "buildCommandFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/x86_64/build_command.txt",
+  "buildOutputFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/x86_64/build_output.txt",
+  "modelOutputFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/x86_64/build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cxx/debug/x86_64/CMakeLists.txt",
+    "toolchainWrapperFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cxx/debug/x86_64/android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cxx/debug/x86_64/build_generation_state.json",
+    "cacheKeyFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cxx/debug/x86_64/compiler_cache_key.json",
+    "compilerCacheUseFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cxx/debug/x86_64/compiler_cache_use.json",
+    "compilerCacheWriteFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cxx/debug/x86_64/compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cxx/debug/x86_64/compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/x86_64/json_generation_record.json",
+  "compileCommandsJsonFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/x86_64/compile_commands.json"
+}

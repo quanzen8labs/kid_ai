@@ -1,0 +1,85 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:2:1-20:12
+INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:2:1-20:12
+INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:2:1-20:12
+INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:2:1-20:12
+MERGED from [com.android.support:appcompat-v7:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:animated-vector-drawable:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/3d4ef2b3428fd2e00049e59c5ed76295/animated-vector-drawable-24.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-vector-drawable:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/f3e19271df614570f4aea1a14c7a51cf/support-vector-drawable-24.0.0/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:support-v4:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/6604e1fd68c93dfff76c7dcde3436152/support-v4-24.0.0/AndroidManifest.xml:17:1-27:12
+INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:2:1-20:12
+INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:2:1-20:12
+INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:2:1-20:12
+	package
+		ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:3:7-42
+		INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml
+	android:versionName
+		ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:5:7-32
+		INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:4:7-30
+		INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.CAMERA
+ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:6:5-65
+	android:name
+		ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:6:22-62
+uses-feature#android.hardware.camera2.full
+ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:7:5-66
+	android:name
+		ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:7:19-63
+application
+ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:9:5-19:19
+MERGED from [com.android.support:appcompat-v7:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/3d4ef2b3428fd2e00049e59c5ed76295/animated-vector-drawable-24.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/3d4ef2b3428fd2e00049e59c5ed76295/animated-vector-drawable-24.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/f3e19271df614570f4aea1a14c7a51cf/support-vector-drawable-24.0.0/AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-vector-drawable:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/f3e19271df614570f4aea1a14c7a51cf/support-vector-drawable-24.0.0/AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-v4:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/6604e1fd68c93dfff76c7dcde3436152/support-v4-24.0.0/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/6604e1fd68c93dfff76c7dcde3436152/support-v4-24.0.0/AndroidManifest.xml:25:5-20
+	android:label
+		ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:9:18-50
+activity#com.tencent.blazefacencnn.MainActivity
+ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:10:9-18:20
+	android:screenOrientation
+		ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:13:19-55
+	android:label
+		ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:12:19-51
+	android:theme
+		ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:11:19-55
+	android:name
+		ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:10:19-46
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:14:13-17:29
+action#android.intent.action.MAIN
+ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:15:17-69
+	android:name
+		ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:15:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:16:17-77
+	android:name
+		ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:16:27-74
+uses-sdk
+INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/3d4ef2b3428fd2e00049e59c5ed76295/animated-vector-drawable-24.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/3d4ef2b3428fd2e00049e59c5ed76295/animated-vector-drawable-24.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/f3e19271df614570f4aea1a14c7a51cf/support-vector-drawable-24.0.0/AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-vector-drawable:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/f3e19271df614570f4aea1a14c7a51cf/support-vector-drawable-24.0.0/AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-v4:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/6604e1fd68c93dfff76c7dcde3436152/support-v4-24.0.0/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/6604e1fd68c93dfff76c7dcde3436152/support-v4-24.0.0/AndroidManifest.xml:21:5-23:54
+INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:24.0.0] /Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/AndroidManifest.xml:23:9-75
+	android:minSdkVersion
+		INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml
+		ADDED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml

@@ -1,0 +1,7 @@
+Executable : /Users/macbook/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
+arguments : 
+-C
+/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/x86
+blazefacencnn
+jvmArgs : 
+
