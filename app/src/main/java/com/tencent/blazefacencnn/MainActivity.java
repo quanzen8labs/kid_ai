@@ -33,11 +33,20 @@ import android.widget.Spinner;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import com.tencent.blazefacencnn.api.*;
+import com.tencent.blazefacencnn.api.models.FaceDetectResult;
 
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCallback
 {
@@ -51,8 +60,10 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
     private Spinner spinnerCPUGPU;
     private int current_model = 0;
     private int current_cpugpu = 0;
+    private ApiClient apiClient = new ApiClient();
     Camera2BasicFragment mCamera2BasicFragment;
     Bitmap imageBitMap;
+    private  Debouncer<Bitmap> debouncer;
 
     /** Called when the activity is first created. */
     @Override
@@ -61,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         if (null == savedInstanceState) {
-            mCamera2BasicFragment =  Camera2BasicFragment.newInstance();
+            mCamera2BasicFragment = Camera2BasicFragment.newInstance();
             mCamera2BasicFragment.faceDetectorCallback = this;
             mCamera2BasicFragment.blazeFaceNcnn = blazefacencnn;
             getSupportFragmentManager().beginTransaction()
@@ -121,6 +132,13 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
             }
         });
 
+        debouncer = new Debouncer<Bitmap>(300, new Debouncer.Callback<Bitmap>() {
+            @Override
+            public void onEmit(Bitmap key) {
+
+            }
+        });
+
         reload();
     }
 
@@ -136,9 +154,20 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
             float y = scale * detectFace.y;
             float width = scale * detectFace.width;
             float height = scale * detectFace.height;
-            mCamera2BasicFragment.rectangleOverlay.setRect(new Rect(Math.round(x), Math.round(y), Math.round(x + width), Math.round(y + height)));
-            Bitmap bitmap = Bitmap.createBitmap(640, 480, Bitmap.Config.ARGB_8888);
-            Bitmap result = blazefacencnn.cropFace(bitmap, detectFace.byteBuffer, 640, 480, 270, Math.round(detectFace.x), Math.round(detectFace.y), Math.round(detectFace.width), Math.round(detectFace.height));
+            Rect rect = new Rect(Math.round(x), Math.round(y), Math.round(x + width), Math.round(y + height));
+            mCamera2BasicFragment.rectangleOverlay.setRect(rect);
+
+
+
+            Bitmap bitmap = Bitmap.createBitmap(680, 520, Bitmap.Config.ARGB_8888);
+            Bitmap result = blazefacencnn.cropFace(bitmap,
+                    detectFace.byteBuffer,
+                    640, 480, 270,
+                    Math.round(detectFace.x - 20), Math.round(detectFace.y - 20),
+                    Math.round(detectFace.width + 20),
+                    Math.round(detectFace.height + 20)
+            )
+                    ;
             this.imageBitMap = result;
             runOnUiThread(new Runnable() {
                 @Override
@@ -146,11 +175,48 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
                     setImage();
                 }
             });
+            apiClient.detectResultCall(getApplicationContext(), result).enqueue(new Callback<List<FaceDetectResult>>() {
+                @Override
+                public void onResponse(Call<List<FaceDetectResult>> call, Response<List<FaceDetectResult>> response) {
+                    List<FaceDetectResult> resultList = response.body();
+                    if (resultList == null || resultList.size() < 1) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+//                                drawText("unknown");
+                            }
+                        });
+                        return;
+                    }
+                    FaceDetectResult detectResult = resultList.get(0);
+                    if (detectResult != null) {
+                        String detectName = detectResult.getName();
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                drawText(detectName);
+                            }
+                        });
+                        Log.d(TAG, "response:" + detectName);
+                    } else {
+                        Log.d(TAG, "response: null rồi các cụ ơi, cứu");
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<List<FaceDetectResult>> call, Throwable t) {
+
+                }
+            });
         }
     }
 
     private void setImage() {
         mCamera2BasicFragment.imageView.setImageBitmap(imageBitMap);
+    }
+
+    private void drawText(String text) {
+        mCamera2BasicFragment.rectangleOverlay.setText(text);
     }
 
     private void reload()

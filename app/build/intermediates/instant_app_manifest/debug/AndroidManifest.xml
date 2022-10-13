@@ -11,6 +11,8 @@
 
     <uses-feature android:name="android.hardware.camera2.full" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:debuggable="true"
         android:label="@string/app_name"

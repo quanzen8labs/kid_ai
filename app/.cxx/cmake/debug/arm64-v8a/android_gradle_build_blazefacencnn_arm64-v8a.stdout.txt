@@ -1,7 +1,2 @@
 ninja: Entering directory `/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/arm64-v8a'
-[1/2] Building CXX object CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o
-/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/jni/blazefacencnn.cpp:260:9: warning: 'convertYUV420ImageToRGBImage' has C-linkage specified, but returns user-defined type 'cv::Mat' which is incompatible with C [-Wreturn-type-c-linkage]
-cv::Mat convertYUV420ImageToRGBImage(unsigned char* nv21, jint nv21_width, jint nv21_height, jint camera_orientation, jint camera_facing) {
-        ^
-1 warning generated.
-[2/2] Linking CXX shared library /Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/arm64-v8a/libblazefacencnn.so
+ninja: no work to do.

@@ -11,6 +11,7 @@ import android.view.View;
 
 public class RectangleOverlay extends View {
     private Rect rect = new Rect(400, 200, 800, 600);
+    private String text = "";
 
     public RectangleOverlay(Context context) {
         super(context);
@@ -29,6 +30,11 @@ public class RectangleOverlay extends View {
         invalidate();
     }
 
+    public void setText(String text) {
+        this.text = text;
+        invalidate();
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -37,5 +43,7 @@ public class RectangleOverlay extends View {
         paint.setColor(Color.RED);
         paint.setStyle(Paint.Style.STROKE);
         canvas.drawRect(rect.left,rect.top,rect.right,rect.bottom,paint);
+        paint.setTextSize(40f);
+        canvas.drawText(text, rect.left, rect.top, paint);
     }
 }
