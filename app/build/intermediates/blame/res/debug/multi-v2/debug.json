@@ -77,6 +77,21 @@
             ]
         },
         {
+            "outputFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/res/merged/debug/values-hu_values-hu.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/res/values-hu/values-hu.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,163,271,394,499,614,698,810,940,1016,1092,1175,1285,1396,1496,1607,1715,1834,1968,2071",
+                        "endColumns": "107,107,122,104,114,83,111,129,75,75,82,109,110,99,110,107,118,133,102,100",
+                        "endOffsets": "158,266,389,494,609,693,805,935,1011,1087,1170,1280,1391,1491,1602,1710,1829,1963,2066,2167"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/res/merged/debug/values-v11_values-v11.arsc.flat",
             "map": [
                 {
@@ -88,21 +103,6 @@
                         "endLines": "7,13,19,25,31,37,38,39,40,45,50,55,57,59,60,61,110,160,161",
                         "endColumns": "12,12,12,12,12,12,88,100,102,12,12,12,12,12,70,82,12,12,90",
                         "endOffsets": "469,894,1322,1748,2175,2600,2689,2790,2893,3301,3721,4143,4250,4379,4450,4533,8148,11903,11994"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/res/merged/debug/values-hu_values-hu.arsc.flat",
-            "map": [
-                {
-                    "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/res/values-hu/values-hu.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,163,271,394,499,614,698,810,940,1016,1092,1175,1285,1396,1496,1607,1715,1834,1968,2071",
-                        "endColumns": "107,107,122,104,114,83,111,129,75,75,82,109,110,99,110,107,118,133,102,100",
-                        "endOffsets": "158,266,389,494,609,693,805,935,1011,1087,1170,1280,1391,1491,1602,1710,1829,1963,2066,2167"
                     }
                 }
             ]
@@ -318,21 +318,6 @@
             ]
         },
         {
-            "outputFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/res/merged/debug/values-ms-rMY_values-ms-rMY.arsc.flat",
-            "map": [
-                {
-                    "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/res/values-ms-rMY/values-ms-rMY.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,166,274,397,502,610,697,801,912,990,1069,1149,1261,1370,1467,1576,1679,1786,1908,2009",
-                        "endColumns": "110,107,122,104,107,86,103,110,77,78,79,111,108,96,108,102,106,121,100,100",
-                        "endOffsets": "161,269,392,497,605,692,796,907,985,1064,1144,1256,1365,1462,1571,1674,1781,1903,2004,2105"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/res/merged/debug/values-my-rMM_values-my-rMM.arsc.flat",
             "map": [
                 {
@@ -343,6 +328,21 @@
                         "startOffsets": "55,164,272,397,502,619,712,824,953,1031,1110,1196,1321,1433,1535,1661,1772,1882,2005,2105",
                         "endColumns": "108,107,124,104,116,92,111,128,77,78,85,124,111,101,125,110,109,122,99,100",
                         "endOffsets": "159,267,392,497,614,707,819,948,1026,1105,1191,1316,1428,1530,1656,1767,1877,2000,2100,2201"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/res/merged/debug/values-ms-rMY_values-ms-rMY.arsc.flat",
+            "map": [
+                {
+                    "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/res/values-ms-rMY/values-ms-rMY.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,166,274,397,502,610,697,801,912,990,1069,1149,1261,1370,1467,1576,1679,1786,1908,2009",
+                        "endColumns": "110,107,122,104,107,86,103,110,77,78,79,111,108,96,108,102,106,121,100,100",
+                        "endOffsets": "161,269,392,497,605,692,796,907,985,1064,1144,1256,1365,1462,1571,1674,1781,1903,2004,2105"
                     }
                 }
             ]

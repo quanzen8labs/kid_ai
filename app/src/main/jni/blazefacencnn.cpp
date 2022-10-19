@@ -257,57 +257,297 @@ JNIEXPORT jboolean JNICALL Java_com_tencent_blazefacencnn_BlazeFaceNcnn_loadMode
     return JNI_TRUE;
 }
 
-cv::Mat convertYUV420ImageToRGBImage(unsigned char* nv21, jint nv21_width, jint nv21_height, jint camera_orientation, jint camera_facing) {
-    int w = 0;
-    int h = 0;
+cv::Mat convertYUV420ImageToRGBImage(unsigned char* nv21, jint nv21_width, jint nv21_height, int win_w, int win_h, jint camera_orientation, jint camera_facing, jint accelerometer_orientation) {
+    // roi crop and rotate nv21
+    int nv21_roi_x = 0;
+    int nv21_roi_y = 0;
+    int nv21_roi_w = 0;
+    int nv21_roi_h = 0;
+    int roi_x = 0;
+    int roi_y = 0;
+    int roi_w = 0;
+    int roi_h = 0;
     int rotate_type = 0;
+    int render_w = 0;
+    int render_h = 0;
+    int render_rotate_type = 0;
     {
-        if (camera_orientation == 0)
+        __android_log_print(ANDROID_LOG_WARN, "NdkCamera", "winW %p", win_w);
+        __android_log_print(ANDROID_LOG_WARN, "NdkCamera", "winH %p", win_h);
+
+        if (accelerometer_orientation == 90 || accelerometer_orientation == 270)
         {
-            w = nv21_width;
-            h = nv21_height;
-            rotate_type = camera_facing == 0 ? 2 : 1;
+            std::swap(win_w, win_h);
         }
-        if (camera_orientation == 90)
+
+        const int final_orientation = (camera_orientation + accelerometer_orientation) % 360;
+
+        if (final_orientation == 0 || final_orientation == 180)
         {
-            w = nv21_height;
-            h = nv21_width;
-            rotate_type = camera_facing == 0 ? 5 : 6;
+            if (win_w * nv21_height > win_h * nv21_width)
+            {
+                roi_w = nv21_width;
+                roi_h = (nv21_width * win_h / win_w) / 2 * 2;
+                roi_x = 0;
+                roi_y = ((nv21_height - roi_h) / 2) / 2 * 2;
+            }
+            else
+            {
+                roi_h = nv21_height;
+                roi_w = (nv21_height * win_w / win_h) / 2 * 2;
+                roi_x = ((nv21_width - roi_w) / 2) / 2 * 2;
+                roi_y = 0;
+            }
+
+            nv21_roi_x = roi_x;
+            nv21_roi_y = roi_y;
+            nv21_roi_w = roi_w;
+            nv21_roi_h = roi_h;
         }
-        if (camera_orientation == 180)
+        if (final_orientation == 90 || final_orientation == 270)
         {
-            w = nv21_width;
-            h = nv21_height;
-            rotate_type = camera_facing == 0 ? 4 : 3;
+            if (win_w * nv21_width > win_h * nv21_height)
+            {
+                roi_w = nv21_height;
+                roi_h = (nv21_height * win_h / win_w) / 2 * 2;
+                roi_x = 0;
+                roi_y = ((nv21_width - roi_h) / 2) / 2 * 2;
+            }
+            else
+            {
+                roi_h = nv21_width;
+                roi_w = (nv21_width * win_w / win_h) / 2 * 2;
+                roi_x = ((nv21_height - roi_w) / 2) / 2 * 2;
+                roi_y = 0;
+            }
+
+            nv21_roi_x = roi_y;
+            nv21_roi_y = roi_x;
+            nv21_roi_w = roi_h;
+            nv21_roi_h = roi_w;
         }
-        if (camera_orientation == 270)
+
+        if (camera_facing == 0)
         {
-            w = nv21_height;
-            h = nv21_width;
-            rotate_type = camera_facing == 0 ? 7 : 8;
+            if (camera_orientation == 0 && accelerometer_orientation == 0)
+            {
+                rotate_type = 2;
+            }
+            if (camera_orientation == 0 && accelerometer_orientation == 90)
+            {
+                rotate_type = 7;
+            }
+            if (camera_orientation == 0 && accelerometer_orientation == 180)
+            {
+                rotate_type = 4;
+            }
+            if (camera_orientation == 0 && accelerometer_orientation == 270)
+            {
+                rotate_type = 5;
+            }
+            if (camera_orientation == 90 && accelerometer_orientation == 0)
+            {
+                rotate_type = 5;
+            }
+            if (camera_orientation == 90 && accelerometer_orientation == 90)
+            {
+                rotate_type = 2;
+            }
+            if (camera_orientation == 90 && accelerometer_orientation == 180)
+            {
+                rotate_type = 7;
+            }
+            if (camera_orientation == 90 && accelerometer_orientation == 270)
+            {
+                rotate_type = 4;
+            }
+            if (camera_orientation == 180 && accelerometer_orientation == 0)
+            {
+                rotate_type = 4;
+            }
+            if (camera_orientation == 180 && accelerometer_orientation == 90)
+            {
+                rotate_type = 5;
+            }
+            if (camera_orientation == 180 && accelerometer_orientation == 180)
+            {
+                rotate_type = 2;
+            }
+            if (camera_orientation == 180 && accelerometer_orientation == 270)
+            {
+                rotate_type = 7;
+            }
+            if (camera_orientation == 270 && accelerometer_orientation == 0)
+            {
+                rotate_type = 7;
+            }
+            if (camera_orientation == 270 && accelerometer_orientation == 90)
+            {
+                rotate_type = 4;
+            }
+            if (camera_orientation == 270 && accelerometer_orientation == 180)
+            {
+                rotate_type = 5;
+            }
+            if (camera_orientation == 270 && accelerometer_orientation == 270)
+            {
+                rotate_type = 2;
+            }
+        }
+        else
+        {
+            if (final_orientation == 0)
+            {
+                rotate_type = 1;
+            }
+            if (final_orientation == 90)
+            {
+                rotate_type = 6;
+            }
+            if (final_orientation == 180)
+            {
+                rotate_type = 3;
+            }
+            if (final_orientation == 270)
+            {
+                rotate_type = 8;
+            }
+        }
+
+        if (accelerometer_orientation == 0)
+        {
+            render_w = roi_w;
+            render_h = roi_h;
+            render_rotate_type = 1;
+        }
+        if (accelerometer_orientation == 90)
+        {
+            render_w = roi_h;
+            render_h = roi_w;
+            render_rotate_type = 8;
+        }
+        if (accelerometer_orientation == 180)
+        {
+            render_w = roi_w;
+            render_h = roi_h;
+            render_rotate_type = 3;
+        }
+        if (accelerometer_orientation == 270)
+        {
+            render_w = roi_h;
+            render_h = roi_w;
+            render_rotate_type = 6;
         }
     }
 
-    cv::Mat nv21_rotated(h + h / 2, w, CV_8UC1);
-    ncnn::kanna_rotate_yuv420sp(nv21, nv21_width, nv21_height, nv21_rotated.data, w, h, rotate_type);
+    // crop and rotate nv21
+    cv::Mat nv21_croprotated(roi_h + roi_h / 2, roi_w, CV_8UC1);
+    {
+        const unsigned char* srcY = nv21 + nv21_roi_y * nv21_width + nv21_roi_x;
+        unsigned char* dstY = nv21_croprotated.data;
+        ncnn::kanna_rotate_c1(srcY, nv21_roi_w, nv21_roi_h, nv21_width, dstY, roi_w, roi_h, roi_w, rotate_type);
 
-    // nv21_rotated to rgb
-    cv::Mat rgb(h, w, CV_8UC3);
-    ncnn::yuv420sp2rgb(nv21_rotated.data, w, h, rgb.data);
+        const unsigned char* srcUV = nv21 + nv21_width * nv21_height + nv21_roi_y * nv21_width / 2 + nv21_roi_x;
+        unsigned char* dstUV = nv21_croprotated.data + roi_w * roi_h;
+        ncnn::kanna_rotate_c2(srcUV, nv21_roi_w / 2, nv21_roi_h / 2, nv21_width, dstUV, roi_w / 2, roi_h / 2, roi_w, rotate_type);
+    }
+
+    // nv21_croprotated to rgb
+    cv::Mat rgb(roi_h, roi_w, CV_8UC3);
+    ncnn::yuv420sp2rgb(nv21_croprotated.data, roi_w, roi_h, rgb.data);
 
     return rgb;
+}
+
+extern "C" JNIEXPORT jbyteArray JNICALL Java_com_tencent_blazefacencnn_BlazeFaceNcnn_constructNV21IfNeed(JNIEnv *env,
+                                                                    jobject instance,
+                                                                  jint width,
+                                                                  jint height,
+                                                                  jbyteArray yData,
+                                                                  jbyteArray uData,
+                                                                  jbyteArray vData,
+                                                                  jint y_len,
+                                                                  jint u_len,
+                                                                  jint v_len,
+                                                                  jint y_pixelStride,
+                                                                  jint u_pixelStride,
+                                                                  jint v_pixelStride,
+                                                                  jint y_rowStride,
+                                                                  jint u_rowStride,
+                                                                  jint v_rowStride)
+{
+    jbyte *y_data = env->GetByteArrayElements(yData, 0);
+    jbyte *u_data = env->GetByteArrayElements(uData, 0);
+    jbyte *v_data = env->GetByteArrayElements(vData, 0);
+
+    if (u_data == v_data + 1 && v_data == y_data + width * height && y_pixelStride == 1 && u_pixelStride == 2 && v_pixelStride == 2 && y_rowStride == width && u_rowStride == width && v_rowStride == width)
+    {
+        // already nv21  :)
+        jbyteArray result = env -> NewByteArray(sizeof(y_data));
+        env->SetByteArrayRegion(result, 0, sizeof(y_data), y_data);
+        return result;
+    }
+    else
+    {
+        // construct nv21
+        unsigned char* nv21 = new unsigned char[width * height + width * height / 2];
+        {
+            // Y
+            unsigned char* yptr = nv21;
+            for (int y=0; y<height; y++)
+            {
+                const signed char* y_data_ptr = y_data + y_rowStride * y;
+                for (int x=0; x<width; x++)
+                {
+                    yptr[0] = y_data_ptr[0];
+                    yptr++;
+                    y_data_ptr += y_pixelStride;
+                }
+            }
+
+            // UV
+            unsigned char* uvptr = nv21 + width * height;
+            for (int y=0; y<height/2; y++)
+            {
+                const signed char* v_data_ptr = v_data + v_rowStride * y;
+                const signed char* u_data_ptr = u_data + u_rowStride * y;
+                for (int x=0; x<width/2; x++)
+                {
+                    uvptr[0] = v_data_ptr[0];
+                    uvptr[1] = u_data_ptr[0];
+                    uvptr += 2;
+                    v_data_ptr += v_pixelStride;
+                    u_data_ptr += u_pixelStride;
+                }
+            }
+        }
+
+        jbyteArray result = env -> NewByteArray(width * height + width * height / 2);
+        env->SetByteArrayRegion(result, 0, width * height + width * height / 2, (jbyte *)(nv21));
+        return result;
+
+        delete[] nv21;
+        env->ReleaseByteArrayElements(yData, y_data, 0);
+        env->ReleaseByteArrayElements(uData, u_data, 0);
+        env->ReleaseByteArrayElements(vData, v_data, 0);
+    }
 }
 
 extern "C" JNIEXPORT jfloatArray JNICALL Java_com_tencent_blazefacencnn_BlazeFaceNcnn_detectFaceJNI(JNIEnv *env,
                                                                                                     jobject instance,
                                                                                                     jbyteArray byteBuffer,
-                                                                                                    jint width, jint height, jint rotation)
+                                                                                                    jint width,
+                                                                                                    jint height,
+                                                                                                    jint winWidth,
+                                                                                                    jint winHeight,
+                                                                                                    jint rotation,
+                                                                                                    jint accelerometer_orientation)
 {
 
     if (g_blazeface)
     {
         jbyte *yuv = env->GetByteArrayElements(byteBuffer, 0);
-        cv::Mat rgb = convertYUV420ImageToRGBImage((unsigned char*)yuv, width, height, rotation, 0);
+        cv::Mat rgb = convertYUV420ImageToRGBImage((unsigned char*)yuv, width, height, winWidth, winHeight, rotation, 0, accelerometer_orientation);
         env->ReleaseByteArrayElements(byteBuffer, yuv, 0);
 
         std::vector<FaceObject> faceobjects;
@@ -397,7 +637,6 @@ void MatToBitmap2(JNIEnv *env, cv::Mat& mat, jobject& bitmap, jboolean needPremu
         }
     }
     AndroidBitmap_unlockPixels(env, bitmap);
-    return;
 }
 
 void MatToBitmap(JNIEnv *env, cv::Mat& mat, jobject& bitmap) {
@@ -410,7 +649,10 @@ extern "C" JNIEXPORT jobject JNICALL Java_com_tencent_blazefacencnn_BlazeFaceNcn
                                                                                                     jbyteArray byteBuffer,
                                                                                                     jint width,
                                                                                                     jint height,
+                                                                                                    jint winWidth,
+                                                                                                    jint winHeight,
                                                                                                     jint rotation,
+                                                                                                    jint accelerometer_orientation,
                                                                                                     jint x,
                                                                                                     jint y,
                                                                                                     jint cropWidth,
@@ -419,7 +661,7 @@ extern "C" JNIEXPORT jobject JNICALL Java_com_tencent_blazefacencnn_BlazeFaceNcn
     if (g_blazeface)
     {
         jbyte *yuv = env->GetByteArrayElements(byteBuffer, 0);
-        cv::Mat rgb = convertYUV420ImageToRGBImage((unsigned char*)yuv, width, height, rotation, 0);
+        cv::Mat rgb = convertYUV420ImageToRGBImage((unsigned char*)yuv, width, height, winWidth, winHeight, rotation, 0, accelerometer_orientation);
         env->ReleaseByteArrayElements(byteBuffer, yuv, 0);
         jobject mybitmap;
         jint _x = MAX(x, 0);

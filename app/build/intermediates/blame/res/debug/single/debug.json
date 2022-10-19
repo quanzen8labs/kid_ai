@@ -8,12 +8,12 @@
         "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/res/color/abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_radio.xml.flat",
-        "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/res/layout/abc_list_menu_item_radio.xml"
-    },
-    {
         "merged": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/res/merged/debug/drawable-v23_abc_control_background_material.xml.flat",
         "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/res/drawable-v23/abc_control_background_material.xml"
+    },
+    {
+        "merged": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_radio.xml.flat",
+        "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/res/layout/abc_list_menu_item_radio.xml"
     },
     {
         "merged": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/res/merged/debug/drawable_abc_ratingbar_small_material.xml.flat",
@@ -120,12 +120,12 @@
         "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/res/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
-        "merged": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
-        "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/res/drawable-xhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/res/drawable-mdpi-v4/abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
+        "source": "/Users/macbook/.gradle/caches/transforms-2/files-2.1/0fdd47b168bd1e4b829c3d3d22671066/appcompat-v7-24.0.0/res/drawable-xhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",

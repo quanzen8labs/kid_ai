@@ -16,11 +16,16 @@ package com.tencent.blazefacencnn;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Rect;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -48,7 +53,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
-public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCallback
+public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCallback, SensorEventListener
 {
     public static final int REQUEST_CAMERA = 100;
     public static final String TAG = "MainActivity";
@@ -63,7 +68,9 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
     private ApiClient apiClient = new ApiClient();
     Camera2BasicFragment mCamera2BasicFragment;
     Bitmap imageBitMap;
-    private  Debouncer<Bitmap> debouncer;
+    private  SensorManager mSensorManager;
+    private  Sensor mAccelerometer;
+    private int accelerometerOrientation = 0;
 
     /** Called when the activity is first created. */
     @Override
@@ -79,11 +86,12 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
                     .replace(R.id.container, mCamera2BasicFragment)
                     .commit();
         }
-
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         // Create an instance of Camera
         // Create our Preview view and set it as the content of our activity.
-
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
 
         Button buttonSwitchCamera = (Button) findViewById(R.id.buttonSwitchCamera);
         buttonSwitchCamera.setOnClickListener(new View.OnClickListener() {
@@ -132,13 +140,6 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
             }
         });
 
-        debouncer = new Debouncer<Bitmap>(300, new Debouncer.Callback<Bitmap>() {
-            @Override
-            public void onEmit(Bitmap key) {
-
-            }
-        });
-
         reload();
     }
 
@@ -162,12 +163,16 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
             Bitmap bitmap = Bitmap.createBitmap(680, 520, Bitmap.Config.ARGB_8888);
             Bitmap result = blazefacencnn.cropFace(bitmap,
                     detectFace.byteBuffer,
-                    640, 480, 270,
+                    640,
+                    480,
+                    detectFace.winWidth,
+                    detectFace.winHeight,
+                    detectFace.orientation,
+                    detectFace.accelerometerOrientation,
                     Math.round(detectFace.x - 20), Math.round(detectFace.y - 20),
                     Math.round(detectFace.width + 20),
                     Math.round(detectFace.height + 20)
-            )
-                    ;
+            );
             this.imageBitMap = result;
             runOnUiThread(new Runnable() {
                 @Override
@@ -183,7 +188,6 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-//                                drawText("unknown");
                             }
                         });
                         return;
@@ -194,7 +198,10 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                drawText(detectName);
+                                Log.d(TAG, "detect name: " + detectName);
+                                if (!detectName.equals("unknown") ) {
+                                    drawText(detectName);
+                                }
                             }
                         });
                         Log.d(TAG, "response:" + detectName);
@@ -246,4 +253,33 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
     }
 
 
+    @Override
+    public void onSensorChanged(SensorEvent sensorEvent) {
+        float acceleration_x = sensorEvent.values[0];
+        float acceleration_y = sensorEvent.values[1];
+        float acceleration_z = sensorEvent.values[2];
+
+        if (acceleration_y > 7)
+        {
+            accelerometerOrientation = 0;
+        }
+        if (acceleration_x < -7)
+        {
+            accelerometerOrientation = 90;
+        }
+        if (acceleration_y < -7)
+        {
+            accelerometerOrientation = 180;
+        }
+        if (acceleration_x > 7)
+        {
+            accelerometerOrientation = 270;
+        }
+
+        mCamera2BasicFragment.accelerometerOrientation = accelerometerOrientation;
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int i) {
+    }
 }

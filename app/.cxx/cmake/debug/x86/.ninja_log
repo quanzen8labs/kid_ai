@@ -4,3 +4,6 @@
 1	1235	1665054080	CMakeFiles/blazefacencnn.dir/blazeface.cpp.o	62a289e181409b1d
 0	1322	1665054080	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	21b8831be3bc6a56
 1322	1941	1665054081	/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/x86/libblazefacencnn.so	5df02876d5e2ee03
+5	1431	1665652979	CMakeFiles/blazefacencnn.dir/blazeface.cpp.o	62a289e181409b1d
+3	1468	1665652979	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	21b8831be3bc6a56
+1468	2166	1665652979	/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/x86/libblazefacencnn.so	5df02876d5e2ee03

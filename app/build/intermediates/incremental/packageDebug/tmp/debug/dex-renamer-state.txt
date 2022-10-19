@@ -1,4 +1,4 @@
-#Thu Oct 13 15:58:28 ICT 2022
+#Wed Oct 19 16:04:20 ICT 2022
 base.1=/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/dex/debug/mergeProjectDexDebug/out/classes.dex
 path.1=classes.dex
 base.0=/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex

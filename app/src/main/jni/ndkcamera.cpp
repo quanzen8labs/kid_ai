@@ -177,7 +177,6 @@ NdkCamera::NdkCamera()
     capture_session_output = 0;
     capture_session = 0;
 
-
     // setup imagereader and its surface
     {
         AImageReader_new(640, 480, AIMAGE_FORMAT_YUV_420_888, /*maxImages*/2, &image_reader);

@@ -29,6 +29,8 @@ import android.graphics.Matrix;
 import android.graphics.Point;
 import android.graphics.RectF;
 import android.graphics.SurfaceTexture;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraCharacteristics;
@@ -52,11 +54,13 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -232,10 +236,11 @@ public class Camera2BasicFragment extends Fragment
 
     public  MyFaceDetectorCallback faceDetectorCallback;
 
+    public  int accelerometerOrientation = 0;
+
     public  RectangleOverlay rectangleOverlay;
 
     public ImageView imageView;
-
 
     /**
      * This a callback object for the {@link ImageReader}. "onImageAvailable" will be called when a
@@ -273,13 +278,36 @@ public class Camera2BasicFragment extends Fragment
             int Ub = U.getBuffer().remaining();
             int Vb = V.getBuffer().remaining();
 
-            byte[] data = new byte[Yb + Ub + Vb];
+            byte[] yData = new byte[Yb];
+            byte[] uData = new byte[Ub];
+            byte[] vData = new byte[Vb];
 
-            Y.getBuffer().get(data, 0, Yb);
-            U.getBuffer().get(data, Yb, Ub);
-            V.getBuffer().get(data, Yb+ Ub, Vb);
+            Y.getBuffer().get(yData, 0, Yb);
+            U.getBuffer().get(uData, 0, Ub);
+            V.getBuffer().get(vData, 0, Vb);
 
-            mBackgroundHandler.post(new MyFaceDetector(data, image.getWidth(), image.getHeight(), mSensorOrientation, blazeFaceNcnn, faceDetectorCallback));
+            mBackgroundHandler.post(new MyFaceDetector(
+                    yData,
+                    uData,
+                    vData,
+                    Yb,
+                    Ub,
+                    Vb,
+                    yPixelStride,
+                    uPixelStride,
+                    vPixelStride,
+                    yRowStride,
+                    uRowStride,
+                    vRowStride,
+                    width,
+                    height,
+                    mSensorOrientation,
+                    blazeFaceNcnn,
+                    accelerometerOrientation,
+                    faceDetectorCallback,
+                    mTextureView.getMeasuredWidth(),
+                    mTextureView.getMeasuredHeight()
+            ));
             image.close();
         }
 

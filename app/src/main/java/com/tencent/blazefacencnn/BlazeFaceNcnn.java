@@ -22,9 +22,10 @@ import java.nio.ByteBuffer;
 public class BlazeFaceNcnn
 {
     public native boolean loadModel(AssetManager mgr, int modelid, int cpugpu);
-
-    public native float[] detectFaceJNI(byte[] byteBuffer, int width, int height, int rotation);
-    public native Bitmap cropFace(Bitmap bitmap, byte[] originImage, int width, int height, int rotation, int x, int y, int cropWidth, int cropHeight);
+    public native byte[] constructNV21IfNeed(int width, int height, byte[] yData, byte[] uData, byte[] vData, int y_len, int u_len, int v_len, int y_pixelStride, int u_pixelStride, int v_pixelStride, int y_rowStride, int u_rowStride, int v_rowStride);
+    public native float[] detectFaceJNI(byte[] byteBuffer, int width, int height, int winWidth, int winHeight, int rotation, int accelerometer_orientation);
+    public native Bitmap cropFace(Bitmap bitmap, byte[] originImage, int width, int height, int winWidth,
+                                  int winHeight, int rotation, int accelerometer_orientation, int x, int y, int cropWidth, int cropHeight);
 
     static {
         System.loadLibrary("blazefacencnn");
