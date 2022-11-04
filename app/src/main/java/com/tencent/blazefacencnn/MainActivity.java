@@ -38,9 +38,14 @@ import android.widget.Spinner;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
+
 import com.tencent.blazefacencnn.api.*;
 import com.tencent.blazefacencnn.api.models.FaceDetectResult;
+import com.tencent.blazefacencnn.tflite.SimilarityClassifier;
+import com.tencent.blazefacencnn.tflite.TFLiteObjectDetectionAPIModel;
 
+import java.io.IOException;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
@@ -57,6 +62,11 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
 {
     public static final int REQUEST_CAMERA = 100;
     public static final String TAG = "MainActivity";
+    // MobileFaceNet
+    private static final int TF_OD_API_INPUT_SIZE = 112;
+    private static final boolean TF_OD_API_IS_QUANTIZED = false;
+    private static final String TF_OD_API_MODEL_FILE = "mobile_face_net.tflite";
+    private static final String TF_OD_API_LABELS_FILE = "file:///android_asset/labelmap.txt";
 
     private BlazeFaceNcnn blazefacencnn = new BlazeFaceNcnn();
     private int facing = 0;
@@ -71,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
     private  SensorManager mSensorManager;
     private  Sensor mAccelerometer;
     private int accelerometerOrientation = 0;
+    private SimilarityClassifier detector;
 
     /** Called when the activity is first created. */
     @Override
@@ -140,6 +151,25 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
             }
         });
 
+        try {
+            detector =
+                    TFLiteObjectDetectionAPIModel.create(
+                            getAssets(),
+                            TF_OD_API_MODEL_FILE,
+                            TF_OD_API_LABELS_FILE,
+                            TF_OD_API_INPUT_SIZE,
+                            TF_OD_API_IS_QUANTIZED);
+            //cropSize = TF_OD_API_INPUT_SIZE;
+        } catch (final IOException e) {
+            e.printStackTrace();
+            Log.e(TAG, "Exception initializing classifier!: " + e.toString());
+            Toast toast =
+                    Toast.makeText(
+                            getApplicationContext(), "Classifier could not be initialized", Toast.LENGTH_SHORT);
+            toast.show();
+            finish();
+        }
+
         reload();
     }
 
@@ -178,41 +208,6 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
                 @Override
                 public void run() {
                     setImage();
-                }
-            });
-            apiClient.detectResultCall(getApplicationContext(), result).enqueue(new Callback<List<FaceDetectResult>>() {
-                @Override
-                public void onResponse(Call<List<FaceDetectResult>> call, Response<List<FaceDetectResult>> response) {
-                    List<FaceDetectResult> resultList = response.body();
-                    if (resultList == null || resultList.size() < 1) {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                            }
-                        });
-                        return;
-                    }
-                    FaceDetectResult detectResult = resultList.get(0);
-                    if (detectResult != null) {
-                        String detectName = detectResult.getName();
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Log.d(TAG, "detect name: " + detectName);
-                                if (!detectName.equals("unknown") ) {
-                                    drawText(detectName);
-                                }
-                            }
-                        });
-                        Log.d(TAG, "response:" + detectName);
-                    } else {
-                        Log.d(TAG, "response: null rồi các cụ ơi, cứu");
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<List<FaceDetectResult>> call, Throwable t) {
-
                 }
             });
         }

@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.tencent.blazefacencnn"
         archivesBaseName = "$applicationId"
-
+        targetSdkVersion 32
         minSdkVersion 24
     }
 
@@ -23,12 +23,19 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    aaptOptions {
+        noCompress "tflite"
+    }
+
     dependencies {
         implementation 'com.android.support:support-v4:24.0.0'
         implementation "com.android.support:appcompat-v7:24.0.0"
         implementation 'com.squareup.retrofit2:retrofit:2.9.0'
         implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
         implementation 'com.squareup.okhttp3:okhttp:3.6.0'
-
+        implementation('org.tensorflow:tensorflow-lite:0.0.0-nightly') { changing = true }
     }
 }
+
+project.ext.ASSET_DIR = projectDir.toString() + '/src/main/assets'
+project.ext.TMP_DIR   = project.buildDir.toString() + '/downloads'

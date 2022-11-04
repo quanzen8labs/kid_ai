@@ -7,3 +7,12 @@
 3	995	1665652981	CMakeFiles/blazefacencnn.dir/blazeface.cpp.o	299fd4a7d6864b02
 3	1072	1665652981	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	c90e2f17b765f603
 1072	1834	1665652981	/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/x86_64/libblazefacencnn.so	46d0d963e7fb1ba2
+4	837	1667536009	CMakeFiles/blazefacencnn.dir/ndkcamera.cpp.o	1e1572fbc5026ac5
+3	1058	1667536009	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	c90e2f17b765f603
+1058	1824	1667536010	/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/x86_64/libblazefacencnn.so	46d0d963e7fb1ba2
+0	8	0	clean	995fc5a44d0919fa
+1	79	1667538468	CMakeFiles/blazefacencnn.dir/ObserverChain.cpp.o	f6b53f1619115eb
+1	1264	1667538469	CMakeFiles/blazefacencnn.dir/ndkcamera.cpp.o	1e1572fbc5026ac5
+1	1476	1667538469	CMakeFiles/blazefacencnn.dir/blazeface.cpp.o	299fd4a7d6864b02
+1	1595	1667538469	CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o	c90e2f17b765f603
+1595	2331	1667538470	/Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/x86_64/libblazefacencnn.so	46d0d963e7fb1ba2

@@ -51,5 +51,6 @@
     <orderEntry type="library" name="Gradle: com.android.support:animated-vector-drawable:24.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-vector-drawable:24.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-v4:24.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: org.tensorflow:tensorflow-lite:0.0.0-nightly@aar" level="project" />
   </component>
 </module>
