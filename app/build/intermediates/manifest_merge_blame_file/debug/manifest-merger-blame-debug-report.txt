@@ -25,31 +25,32 @@
 17    <application
 17-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:10:5-21:19
 18        android:debuggable="true"
-19        android:label="@string/app_name" >
+19        android:label="@string/app_name"
 19-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:10:18-50
-20        <activity
-20-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:11:9-20:20
-21            android:name="com.tencent.blazefacencnn.MainActivity"
-21-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:11:19-47
-22            android:exported="true"
-22-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:12:19-42
-23            android:label="@string/app_name"
-23-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:14:19-51
-24            android:screenOrientation="portrait"
-24-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:15:19-55
-25            android:theme="@style/MaterialTheme" >
-25-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:13:19-55
-26            <intent-filter>
-26-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:16:13-19:29
-27                <action android:name="android.intent.action.MAIN" />
-27-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:17:17-69
-27-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:17:25-66
-28
-29                <category android:name="android.intent.category.LAUNCHER" />
-29-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:18:17-77
-29-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:18:27-74
-30            </intent-filter>
-31        </activity>
-32    </application>
-33
-34</manifest>
+20        android:testOnly="true" >
+21        <activity
+21-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:11:9-20:20
+22            android:name="com.tencent.blazefacencnn.MainActivity"
+22-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:11:19-47
+23            android:exported="true"
+23-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:12:19-42
+24            android:label="@string/app_name"
+24-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:14:19-51
+25            android:screenOrientation="portrait"
+25-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:15:19-55
+26            android:theme="@style/MaterialTheme" >
+26-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:13:19-55
+27            <intent-filter>
+27-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:16:13-19:29
+28                <action android:name="android.intent.action.MAIN" />
+28-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:17:17-69
+28-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:17:25-66
+29
+30                <category android:name="android.intent.category.LAUNCHER" />
+30-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:18:17-77
+30-->/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/AndroidManifest.xml:18:27-74
+31            </intent-filter>
+32        </activity>
+33    </application>
+34
+35</manifest>

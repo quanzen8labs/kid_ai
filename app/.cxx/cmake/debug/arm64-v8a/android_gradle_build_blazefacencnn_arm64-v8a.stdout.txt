@@ -1,18 +1,2 @@
 ninja: Entering directory `/Users/macbook/Documents/ncnn_Android_blazeface-main/app/.cxx/cmake/debug/arm64-v8a'
-[1/5] Building CXX object CMakeFiles/blazefacencnn.dir/ObserverChain.cpp.o
-[2/5] Building CXX object CMakeFiles/blazefacencnn.dir/ndkcamera.cpp.o
-[3/5] Building CXX object CMakeFiles/blazefacencnn.dir/blazeface.cpp.o
-[4/5] Building CXX object CMakeFiles/blazefacencnn.dir/blazefacencnn.cpp.o
-/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/jni/blazefacencnn.cpp:260:9: warning: 'convertYUV420ImageToRGBImage' has C-linkage specified, but returns user-defined type 'cv::Mat' which is incompatible with C [-Wreturn-type-c-linkage]
-cv::Mat convertYUV420ImageToRGBImage(unsigned char* nv21, jint nv21_width, jint nv21_height, int win_w, int win_h, jint camera_orientation, jint camera_facing, jint accelerometer_orientation) {
-        ^
-/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/jni/blazefacencnn.cpp:275:71: warning: format specifies type 'void *' but the argument has type 'int' [-Wformat]
-        __android_log_print(ANDROID_LOG_WARN, "NdkCamera", "winW %p", win_w);
-                                                                 ~~   ^~~~~
-                                                                 %d
-/Users/macbook/Documents/ncnn_Android_blazeface-main/app/src/main/jni/blazefacencnn.cpp:276:71: warning: format specifies type 'void *' but the argument has type 'int' [-Wformat]
-        __android_log_print(ANDROID_LOG_WARN, "NdkCamera", "winH %p", win_h);
-                                                                 ~~   ^~~~~
-                                                                 %d
-3 warnings generated.
-[5/5] Linking CXX shared library /Users/macbook/Documents/ncnn_Android_blazeface-main/app/build/intermediates/cmake/debug/obj/arm64-v8a/libblazefacencnn.so
+ninja: no work to do.

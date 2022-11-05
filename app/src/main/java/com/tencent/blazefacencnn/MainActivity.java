@@ -179,8 +179,7 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
         for (DetectFace detectFace: detectFaces) {
             DisplayMetrics displayMetrics = new DisplayMetrics();
             getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-            float maxSize = (float)Math.max(displayMetrics.widthPixels, displayMetrics.heightPixels);
-            float scale = (float)1440/640;
+            float scale = (float)displayMetrics.widthPixels/480;
             float x = scale * detectFace.x;
             float y = scale * detectFace.y;
             float width = scale * detectFace.width;
@@ -188,10 +187,9 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
             Rect rect = new Rect(Math.round(x), Math.round(y), Math.round(x + width), Math.round(y + height));
             mCamera2BasicFragment.rectangleOverlay.setRect(rect);
 
-
-
-            Bitmap bitmap = Bitmap.createBitmap(680, 520, Bitmap.Config.ARGB_8888);
-            Bitmap result = blazefacencnn.cropFace(bitmap,
+            Bitmap bitmap = Bitmap.createBitmap(660, 500, Bitmap.Config.ARGB_8888);
+            Bitmap result = blazefacencnn.cropFace(
+                    bitmap,
                     detectFace.byteBuffer,
                     640,
                     480,
@@ -199,7 +197,7 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
                     detectFace.winHeight,
                     detectFace.orientation,
                     detectFace.accelerometerOrientation,
-                    Math.round(detectFace.x - 20), Math.round(detectFace.y - 20),
+                    Math.round(detectFace.x - 10), Math.round(detectFace.y - 10),
                     Math.round(detectFace.width + 20),
                     Math.round(detectFace.height + 20)
             );
@@ -210,6 +208,11 @@ public class MainActivity extends AppCompatActivity implements  MyFaceDetectorCa
                     setImage();
                 }
             });
+            Bitmap compressImage = ImageHelper.compressImage(bitmap, TF_OD_API_INPUT_SIZE, TF_OD_API_INPUT_SIZE);
+            List<SimilarityClassifier.Recognition> recognitions =  detector.recognizeImage(compressImage, false);
+            if (recognitions.size() > 0) {
+               Log.d(TAG, "recognization: " + recognitions.get(0).getDistance());
+            }
         }
     }
 
